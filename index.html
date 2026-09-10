@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>KisanSlot - Smart Slot Booking for Farmers | Ministry of Agriculture & Farmers Welfare</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN & Custom Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-fixed-dim": "#88d982",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f3f3f6",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#ffddb5",
+            "inverse-surface": "#2f3133",
+            "on-primary-fixed": "#001b3d",
+            "surface-bright": "#f9f9fc",
+            "on-tertiary-container": "#ffe0bb",
+            "surface-container-high": "#e8e8ea",
+            "outline": "#727783",
+            "primary-fixed": "#d6e3ff",
+            "on-surface-variant": "#424752",
+            "on-tertiary-fixed": "#2a1800",
+            "primary-fixed-dim": "#a9c7ff",
+            "on-background": "#1a1c1e",
+            "surface-dim": "#dadadc",
+            "tertiary-container": "#8e5b00",
+            "on-primary-fixed-variant": "#00468c",
+            "error": "#ba1a1a",
+            "background": "#f9f9fc",
+            "primary": "#004d99",
+            "outline-variant": "#c2c6d4",
+            "surface-variant": "#e2e2e5",
+            "error-container": "#ffdad6",
+            "secondary": "#1b6d24",
+            "secondary-container": "#a0f399",
+            "surface": "#f9f9fc",
+            "on-secondary": "#ffffff",
+            "secondary-fixed": "#a3f69c",
+            "on-surface": "#1a1c1e",
+            "tertiary-fixed-dim": "#ffb957",
+            "tertiary": "#6d4500",
+            "inverse-primary": "#a9c7ff",
+            "on-secondary-fixed": "#002204",
+            "on-primary": "#ffffff",
+            "primary-container": "#1565c0",
+            "on-primary-container": "#dae5ff",
+            "on-tertiary-fixed-variant": "#643f00",
+            "surface-container": "#eeeef0",
+            "surface-tint": "#005db7",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "surface-container-highest": "#e2e2e5",
+            "on-secondary-container": "#217128",
+            "inverse-on-surface": "#f0f0f3",
+            "on-secondary-fixed-variant": "#005312"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xxs": "0.25rem",
+            "space-xs": "0.5rem",
+            "space-sm": "0.75rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            "space-3xl": "4rem",
+            "gutter-mobile": "1rem",
+            "gutter-tablet": "1.5rem",
+            "gutter-desktop": "1.5rem"
+          },
+          fontFamily: {
+            "title-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "display-lg": ["Manrope", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-xl": ["Manrope", "sans-serif"],
+            "headline-sm": ["Manrope", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "code-sm": ["JetBrains Mono", "monospace"],
+            "display-lg-mobile": ["Manrope", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "headline-lg": ["Manrope", "sans-serif"],
+            "label-lg": ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "title-md": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "code-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Interactive Script -->
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+  <!-- ================================================================= -->
+  <!-- TOPBAR & HEADER (GIGW 3.0 ACCESSIBILITY COMPLIANT)               -->
+  <!-- ================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <!-- GIGW Gov Banner Strip -->
+    <div class="bg-surface-container text-on-surface-variant">
+      <div
+        class="max-w-7xl mx-auto px-gutter-desktop h-10 flex items-center justify-between font-label-md text-label-md">
+        <div class="flex items-center gap-space-sm overflow-hidden whitespace-nowrap">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary flex-shrink-0"></span>
+          <span class="font-label-md text-label-md text-on-surface font-semibold truncate">भारत सरकार | Government of
+            India</span>
+          <span class="text-outline-variant hidden sm:inline">|</span>
+          <span class="text-on-surface-variant hidden md:inline truncate">कृषि एवं किसान कल्याण मंत्रालय | Ministry of
+            Agriculture & Farmers Welfare</span>
+        </div>
+        <div class="flex items-center gap-space-lg flex-shrink-0">
+          <div class="flex items-center gap-space-xs">
+            <button aria-label="Decrease Font Size"
+              class="px-space-xs py-space-xxs rounded hover:bg-surface-container-high hover:text-on-surface transition-colors font-code-sm text-code-sm font-semibold"
+              type="button" onclick="adjustFontSize(-1)">A-</button>
+            <button aria-label="Standard Font Size"
+              class="px-space-xs py-space-xxs rounded hover:bg-surface-container-high hover:text-on-surface transition-colors font-code-sm text-code-sm font-semibold"
+              type="button" onclick="adjustFontSize(0)">A</button>
+            <button aria-label="Increase Font Size"
+              class="px-space-xs py-space-xxs rounded hover:bg-surface-container-high hover:text-on-surface transition-colors font-code-sm text-code-sm font-semibold"
+              type="button" onclick="adjustFontSize(1)">A+</button>
+          </div>
+          <span class="text-outline-variant hidden sm:inline">|</span>
+          <button aria-label="Screen Reader Access"
+            class="hidden sm:flex items-center gap-space-xxs text-on-surface-variant hover:text-on-surface transition-colors"
+            type="button" onclick="announceScreenReader()">
+            <span class="material-symbols-outlined text-[16px]">record_voice_over</span>
+            <span class="font-label-md text-label-md">Screen Reader</span>
+          </button>
+          <span class="text-outline-variant">|</span>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-on-surface-variant">language</span>
+            <select aria-label="Select Language"
+              class="bg-transparent text-on-surface font-label-md text-label-md cursor-pointer focus:outline-none"
+              onchange="changeLanguage(this.value)">
+              <option value="en">English</option>
+              <option value="hi">हिन्दी</option>
+              <option value="pa">ਪੰਜਾਬੀ</option>
+              <option value="mr">मराठी</option>
+              <option value="te">తెలుగు</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <div class="h-20 max-w-7xl mx-auto px-gutter-desktop flex items-center justify-between">
+      <a href="#" class="flex items-center gap-space-md group">
+        <img alt="KisanSlot Logo" class="h-10 w-auto object-contain rounded-md" src="assets/logo.png"
+          onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuDncZaHb4sgeOuc2gONTS1OM0Hw7jnf7jEuBSE2X4-Z2gzQaqVxgQwR2Nz_Q_XotNnCmZ5jbRtcKcIT4Sz5keqThe5efFrr2wxKy6tDQEszrVW1o5XYZSju8Gv4ShdJ9QjlRavX07jujUNLMV4kYA9uztHCRLVJ07R1CwqAlUPb26k5gJdmjtgt7JHdLefOTyN6OWaGJri8AiQyzQAPStrdMrrcabbsZ5LCopKQ0NOASrW418XCsRQN'" />
+        <div class="flex flex-col">
+          <span
+            class="font-headline-sm text-headline-sm tracking-tight text-secondary font-bold leading-none">KisanSlot</span>
+          <span class="font-label-md text-label-md text-on-surface-variant mt-space-xxs">Smart Slot Booking for
+            Farmers</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden xl:flex items-center gap-space-xs font-label-lg text-label-lg">
+        <a aria-current="page"
+          class="px-space-md py-space-xs transition-colors bg-secondary-container text-on-secondary-container font-semibold rounded-lg"
+          href="#">Home</a>
+        <a class="px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-lg"
+          href="#booking-form-section">Slot Booking</a>
+        <a class="px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-lg"
+          href="#live-queue-board">Live Queue</a>
+        <a class="px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-lg"
+          href="#stepper-section">Procurement Status</a>
+        <a class="px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-lg"
+          href="#sms-section">Payments</a>
+        <a class="px-space-md py-space-xs text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors rounded-lg"
+          href="#channels-section">Help & Support</a>
+      </nav>
+
+      <!-- User Profile & Notifications -->
+      <div class="flex items-center gap-space-lg">
+        <button aria-label="Notifications"
+          class="relative p-space-xs rounded-full hover:bg-surface-container hover:text-on-surface text-on-surface-variant transition-colors"
+          type="button" onclick="showToast('🔔 2 New Notifications: J-Form Generated & DBT Payment In Transit')">
+          <span class="material-symbols-outlined text-[24px]">notifications</span>
+          <span
+            class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-error ring-2 ring-surface-container-lowest"></span>
+        </button>
+
+        <div class="flex items-center gap-space-sm pl-space-xs border-l border-surface-container-highest">
+          <div
+            class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-label-md ring-1 ring-outline-variant">
+            RS
+          </div>
+          <div class="hidden sm:flex flex-col text-left">
+            <span class="font-label-lg text-label-lg font-semibold text-on-surface leading-tight">Rameshwar Singh</span>
+            <span class="font-label-md text-label-md text-secondary font-medium">Kisan ID: PB-88219</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================= -->
+  <!-- MAIN CONTENT CONTAINER                                            -->
+  <!-- ================================================================= -->
+  <main class="w-full pt-[120px] bg-surface min-h-screen">
+    <div class="flex flex-col w-full">
+
+      <!-- ================================================================= -->
+      <!-- 1. HERO SECTION WITH CAROUSEL & MANDI BULLETIN TICKER            -->
+      <!-- ================================================================= -->
+      <section
+        class="relative w-full bg-gradient-to-br from-secondary to-[#124d1a] text-on-secondary overflow-hidden shadow-xl">
+        <!-- Subtle agricultural topographic / geometric background overlay -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <svg class="w-full h-full" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern height="48" id="grid-pattern" patternUnits="userSpaceOnUse" width="48">
+                <path d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" stroke-width="1.2"></path>
+                <circle cx="24" cy="24" fill="currentColor" opacity="0.6" r="2"></circle>
+              </pattern>
+            </defs>
+            <rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
+          </svg>
+        </div>
+
+        <!-- Hero Content Container -->
+        <div class="relative max-w-7xl mx-auto px-gutter-desktop pt-space-xl pb-space-2xl z-10">
+          <!-- Slide Container Area -->
+          <div class="relative min-h-[360px] flex items-center" id="hero-slides-wrapper">
+            <!-- Slide 1 (Active by default) -->
+            <div class="hero-slide w-full transition-opacity duration-500 flex flex-col items-start max-w-3xl"
+              id="hero-slide-0">
+              <div
+                class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md mb-space-md shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+                <span>Rabi Procurement Season 2024-25 Active</span>
+              </div>
+              <h1
+                class="font-display-lg text-display-lg text-surface-container-lowest font-bold tracking-tight mb-space-sm leading-tight">
+                Guaranteed MSP Procurement Without The Mandi Chaos
+              </h1>
+              <p
+                class="font-body-lg text-body-lg text-surface-container-lowest/90 mb-space-xl max-w-2xl leading-relaxed">
+                Book your verified arrival time slot at your local PACS or APMC Mandi, bypass 14-hour tractor queues,
+                and receive direct DBT payment into your bank account within 48 hours.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-md">
+                <a class="inline-flex items-center justify-center gap-space-xs bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg font-bold px-6 py-3.5 rounded-lg shadow-md hover:brightness-105 transition-all"
+                  href="#booking-form-section">
+                  <span>Book Mandi Slot Now</span>
+                  <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                </a>
+                <a class="inline-flex items-center justify-center gap-space-xs bg-surface-container-lowest/15 backdrop-blur-sm text-surface-container-lowest font-label-lg text-label-lg font-semibold px-6 py-3.5 rounded-lg hover:bg-surface-container-lowest/25 transition-all"
+                  href="#live-queue-board">
+                  <span class="material-symbols-outlined text-[20px]">speed</span>
+                  <span>Check Live Token Status</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 2 (Hidden by default) -->
+            <div class="hero-slide w-full transition-opacity duration-500 hidden flex-col items-start max-w-3xl"
+              id="hero-slide-1">
+              <div
+                class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md mb-space-md shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">verified</span>
+                <span>Direct Benefit Transfer (PFMS Integrated)</span>
+              </div>
+              <h2
+                class="font-display-lg text-display-lg text-surface-container-lowest font-bold tracking-tight mb-space-sm leading-tight">
+                Assured Direct Payment within 48 Hours via DBT
+              </h2>
+              <p
+                class="font-body-lg text-body-lg text-surface-container-lowest/90 mb-space-xl max-w-2xl leading-relaxed">
+                Automated Weighbridge receipts instantly trigger state treasury funds. Zero intermediary commissions, no
+                J-form delay, and instant SMS audit trails.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-md">
+                <a class="inline-flex items-center justify-center gap-space-xs bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg font-bold px-6 py-3.5 rounded-lg shadow-md hover:brightness-105 transition-all"
+                  href="#booking-form-section">
+                  <span>Schedule Crop Consignment</span>
+                  <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                </a>
+                <a class="inline-flex items-center justify-center gap-space-xs bg-surface-container-lowest/15 backdrop-blur-sm text-surface-container-lowest font-label-lg text-label-lg font-semibold px-6 py-3.5 rounded-lg hover:bg-surface-container-lowest/25 transition-all"
+                  href="#stepper-section">
+                  <span class="material-symbols-outlined text-[20px]">account_balance</span>
+                  <span>Payment SLA Guidelines</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 3 (Hidden by default) -->
+            <div class="hero-slide w-full transition-opacity duration-500 hidden flex-col items-start max-w-3xl"
+              id="hero-slide-2">
+              <div
+                class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md mb-space-md shadow-sm">
+                <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+                <span>Automated Gate Pass Entry</span>
+              </div>
+              <h2
+                class="font-display-lg text-display-lg text-surface-container-lowest font-bold tracking-tight mb-space-sm leading-tight">
+                Smart Weighbridge & Instant Moisture Assay Lab
+              </h2>
+              <p
+                class="font-body-lg text-body-lg text-surface-container-lowest/90 mb-space-xl max-w-2xl leading-relaxed">
+                High-speed electronic weighbridges calculate gross and tare weight in under 180 seconds. Get your
+                digital J-Form printed or pushed directly to WhatsApp.
+              </p>
+              <div class="flex flex-wrap items-center gap-space-md">
+                <a class="inline-flex items-center justify-center gap-space-xs bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg font-bold px-6 py-3.5 rounded-lg shadow-md hover:brightness-105 transition-all"
+                  href="#live-queue-board">
+                  <span>Track Yard Gate Pass</span>
+                  <span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+                </a>
+                <a class="inline-flex items-center justify-center gap-space-xs bg-surface-container-lowest/15 backdrop-blur-sm text-surface-container-lowest font-label-lg text-label-lg font-semibold px-6 py-3.5 rounded-lg hover:bg-surface-container-lowest/25 transition-all"
+                  href="#booking-form-section">
+                  <span class="material-symbols-outlined text-[20px]">schedule</span>
+                  <span>Reserve Unloading Bay</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls: Dots & Prev/Next Arrows -->
+          <div class="flex items-center justify-between pt-space-md border-t border-white/10">
+            <div class="flex items-center gap-space-xs">
+              <button aria-label="Go to slide 1"
+                class="w-8 h-2.5 rounded-full bg-surface-container-lowest transition-all" id="hero-dot-0"
+                onclick="switchHeroSlide(0)"></button>
+              <button aria-label="Go to slide 2"
+                class="w-3 h-2.5 rounded-full bg-surface-container-lowest/40 hover:bg-surface-container-lowest transition-all"
+                id="hero-dot-1" onclick="switchHeroSlide(1)"></button>
+              <button aria-label="Go to slide 3"
+                class="w-3 h-2.5 rounded-full bg-surface-container-lowest/40 hover:bg-surface-container-lowest transition-all"
+                id="hero-dot-2" onclick="switchHeroSlide(2)"></button>
+            </div>
+            <div class="flex items-center gap-space-xs">
+              <button aria-label="Previous Slide"
+                class="p-2 rounded-full bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-surface-container-lowest transition-colors"
+                onclick="prevHeroSlide()">
+                <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+              </button>
+              <button aria-label="Next Slide"
+                class="p-2 rounded-full bg-surface-container-lowest/10 hover:bg-surface-container-lowest/20 text-surface-container-lowest transition-colors"
+                onclick="nextHeroSlide()">
+                <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Mandi Bulletin Ticker Strip -->
+        <div
+          class="w-full bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-md py-2.5 px-gutter-desktop shadow-inner">
+          <div class="max-w-7xl mx-auto flex items-center justify-between gap-space-md text-body-sm font-body-sm">
+            <div class="flex items-center gap-space-xs flex-shrink-0">
+              <span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+              <span class="font-label-md text-label-md uppercase tracking-wider text-tertiary-fixed font-bold">Mandi
+                Flash:</span>
+            </div>
+            <div class="overflow-hidden whitespace-nowrap w-full">
+              <p class="inline-block animate-marquee pl-space-md text-surface-container-lowest font-medium">
+                🚨 Wheat Procurement Rabi 2025 Live Across 4,820 Centres &nbsp;•&nbsp; Official MSP: ₹2,425 / Quintal
+                &nbsp;•&nbsp; Instant Slot Verification Active &nbsp;•&nbsp; Moisture Limit: 12.0% Maximum Allowed
+                &nbsp;•&nbsp; Helpdesk 1800-180-1551 Active 24x7
+              </p>
+            </div>
+            <div
+              class="hidden lg:flex items-center gap-space-xs flex-shrink-0 text-outline-variant font-code-sm text-code-sm">
+              <span class="material-symbols-outlined text-[14px]">sync</span>
+              <span id="sync-clock">Grid Sync: 12:41:09 IST</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 2. IMPACT STATS STRIP                                             -->
+      <!-- ================================================================= -->
+      <section class="w-full bg-surface-container-lowest py-space-xl shadow-sm">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+            <!-- Stat Card 1 -->
+            <div
+              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between">
+              <div class="flex items-start justify-between">
+                <span class="font-label-md text-label-md text-on-surface-variant font-semibold">Avg. Mandi Wait
+                  Time</span>
+                <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold">
+                  -60% Reduction
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-headline-xl text-headline-xl font-extrabold text-on-surface">85% → 25%</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Down from 14.5 hrs to 2.2 hrs avg yard stay
+                </p>
+              </div>
+              <div class="mt-space-sm w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+                <div class="bg-secondary h-1.5 rounded-full stat-fill-25"></div>
+              </div>
+            </div>
+
+            <!-- Stat Card 2 -->
+            <div
+              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between">
+              <div class="flex items-start justify-between">
+                <span class="font-label-md text-label-md text-on-surface-variant font-semibold">Payment Delay
+                  Index</span>
+                <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold">
+                  48h DBT SLA
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-headline-xl text-headline-xl font-extrabold text-on-surface">70% → 15%</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Direct beneficiary account transfer via PFMS
+                </p>
+              </div>
+              <div class="mt-space-sm w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+                <div class="bg-primary-container h-1.5 rounded-full stat-fill-85"></div>
+              </div>
+            </div>
+
+            <!-- Stat Card 3 -->
+            <div
+              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between">
+              <div class="flex items-start justify-between">
+                <span class="font-label-md text-label-md text-on-surface-variant font-semibold">Mandi Yard
+                  Congestion</span>
+                <span
+                  class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold">
+                  Zero Blockades
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-headline-xl text-headline-xl font-extrabold text-on-surface">75% → 20%</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  No highway tractor tailbacks reported this season
+                </p>
+              </div>
+              <div class="mt-space-sm w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+                <div class="bg-secondary h-1.5 rounded-full stat-fill-20"></div>
+              </div>
+            </div>
+
+            <!-- Stat Card 4 -->
+            <div
+              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between">
+              <div class="flex items-start justify-between">
+                <span class="font-label-md text-label-md text-on-surface-variant font-semibold">Farmers Served
+                  Today</span>
+                <span
+                  class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                  Live
+                </span>
+              </div>
+              <div class="mt-space-md">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-headline-xl text-headline-xl font-extrabold text-secondary">1,48,290+</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  ₹360+ Cr MSP disbursed directly today
+                </p>
+              </div>
+              <div class="mt-space-sm w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+                <div class="bg-secondary-fixed-dim h-1.5 rounded-full stat-fill-92"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 3. QUANTITY-BASED SLOT BOOKING FORM CARD (CORE VISUAL FEATURE)   -->
+      <!-- ================================================================= -->
+      <section class="w-full bg-surface py-space-2xl" id="booking-form-section">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <div class="mb-space-lg max-w-2xl">
+            <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wide">Instant Digital
+              Appointment</span>
+            <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold mt-1">
+              Reserve Your Mandi Unloading Gate Pass
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-xxs">
+              Select crop, declare estimated weight, choose procurement center, and obtain a barcoded digital e-Pass for
+              rapid entry.
+            </p>
+          </div>
+
+          <!-- Booking Card Container -->
+          <div class="bg-surface-container-lowest rounded-xl shadow-lg p-space-xl overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+
+              <!-- Form Inputs (7 Cols) -->
+              <form class="lg:col-span-7 flex flex-col gap-space-lg"
+                onsubmit="event.preventDefault(); simulateBooking();">
+                <!-- Crop Type & Procurement Center -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-space-xxs">
+                    <label class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1"
+                      for="crop-type">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">eco</span>
+                      <span>Crop Type</span>
+                    </label>
+                    <div class="relative">
+                      <select
+                        class="w-full h-12 bg-surface-container-lowest text-on-surface font-body-md text-body-md px-space-md rounded-lg shadow-sm border border-outline-variant/60 focus:border-secondary focus:outline-none appearance-none cursor-pointer"
+                        id="crop-type">
+                        <option selected value="wheat">Wheat (Kanak) - MSP ₹2,425/Qtl</option>
+                        <option value="paddy">Paddy (Dhan) - Grade A - MSP ₹2,320/Qtl</option>
+                        <option value="mustard">Mustard (Sarson) - MSP ₹5,650/Qtl</option>
+                        <option value="chana">Chana (Gram) - MSP ₹5,440/Qtl</option>
+                        <option value="maize">Maize (Makka) - MSP ₹2,090/Qtl</option>
+                      </select>
+                      <span
+                        class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col gap-space-xxs">
+                    <label class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1"
+                      for="proc-center">
+                      <span class="material-symbols-outlined text-[16px] text-primary">storefront</span>
+                      <span>Procurement Centre / Mandi</span>
+                    </label>
+                    <div class="relative">
+                      <select
+                        class="w-full h-12 bg-surface-container-lowest text-on-surface font-body-md text-body-md px-space-md rounded-lg shadow-sm border border-outline-variant/60 focus:border-primary focus:outline-none appearance-none cursor-pointer"
+                        id="proc-center">
+                        <option selected value="khanna">PACS Khanna Central Yard 02 - Ludhiana East</option>
+                        <option value="rajpura">APMC Rajpura Main Gate - Patiala</option>
+                        <option value="karnal">HAFED Karnal Terminal 01 - Karnal</option>
+                        <option value="sirsa">PACS Ellenabad Sub-Yard - Sirsa</option>
+                      </select>
+                      <span
+                        class="material-symbols-outlined absolute right-3 top-3 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quantity Slider & Manual Input -->
+                <div
+                  class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm border border-outline-variant/40">
+                  <div class="flex items-center justify-between">
+                    <label class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1"
+                      for="quantity-number">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">scale</span>
+                      <span>Declared Consignment Quantity (Quintals)</span>
+                    </label>
+                    <div
+                      class="flex items-center gap-1 bg-surface-container-lowest px-space-sm py-1 rounded-lg shadow-sm border border-outline-variant/60">
+                      <input aria-label="Declared Consignment Quantity in Quintals"
+                        class="w-16 text-right font-headline-sm text-headline-sm font-bold text-secondary bg-transparent focus:outline-none"
+                        id="quantity-number" max="250" min="5" oninput="syncRange(this.value)" type="number"
+                        value="45" />
+                      <span class="font-label-md text-label-md text-on-surface-variant font-medium">Qtl</span>
+                    </div>
+                  </div>
+                  <input aria-label="Declared Consignment Quantity range"
+                    class="w-full accent-secondary cursor-pointer h-2 bg-surface-container-highest rounded-lg appearance-none"
+                    id="quantity-range" max="200" min="5" oninput="syncNumber(this.value)" type="range" value="45" />
+                  <div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+                    <span>Small Load (~15 Qtl)</span>
+                    <span class="font-semibold text-secondary" id="trolley-indicator">~1.5 Tractor Trolley Loads</span>
+                    <span>Heavy Trailor (~180 Qtl)</span>
+                  </div>
+                </div>
+
+                <!-- Dynamic Date Picker & Slot Selector -->
+                <div class="flex flex-col gap-space-xs">
+                  <label
+                    class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between">
+                    <span class="flex items-center gap-1">
+                      <span class="material-symbols-outlined text-[16px] text-secondary">calendar_month</span>
+                      <span>Select Arrival Date & Slot Window</span>
+                    </span>
+                    <span class="font-label-md text-label-md text-secondary font-semibold">Today & Next 3 Days</span>
+                  </label>
+
+                  <!-- Date Tabs -->
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs">
+                    <button
+                      class="p-2.5 rounded-lg bg-secondary text-on-secondary flex flex-col items-center justify-center text-center shadow-sm"
+                      type="button" onclick="selectDateTab(this, '28 Mar (Thu)')">
+                      <span class="font-label-md text-label-md font-bold">28 Mar (Thu)</span>
+                      <span class="font-body-sm text-body-sm opacity-90">🟢 High Capacity</span>
+                    </button>
+                    <button
+                      class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-center justify-center text-center transition-colors"
+                      type="button" onclick="selectDateTab(this, '29 Mar (Fri)')">
+                      <span class="font-label-md text-label-md font-bold">29 Mar (Fri)</span>
+                      <span class="font-body-sm text-body-sm text-tertiary font-semibold">🟡 Filling Fast</span>
+                    </button>
+                    <button
+                      class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-center justify-center text-center transition-colors"
+                      type="button" onclick="selectDateTab(this, '30 Mar (Sat)')">
+                      <span class="font-label-md text-label-md font-bold">30 Mar (Sat)</span>
+                      <span class="font-body-sm text-body-sm opacity-90">🟢 High Capacity</span>
+                    </button>
+                    <button
+                      class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface flex flex-col items-center justify-center text-center transition-colors"
+                      type="button" onclick="selectDateTab(this, '31 Mar (Sun)')">
+                      <span class="font-label-md text-label-md font-bold">31 Mar (Sun)</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">Maintenance</span>
+                    </button>
+                  </div>
+
+                  <!-- Time Windows -->
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs mt-space-xs">
+                    <label
+                      class="cursor-pointer p-3 rounded-lg bg-primary-fixed/30 hover:bg-primary-fixed/50 flex flex-col gap-0.5 shadow-sm transition-all border border-primary-fixed">
+                      <input aria-label="Select 08:00 - 11:00 AM slot" checked class="sr-only" name="time_slot"
+                        type="radio" />
+                      <div class="flex items-center justify-between">
+                        <span class="font-label-lg text-label-lg font-bold text-primary">08:00 - 11:00 AM</span>
+                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">Optimal moisture time</span>
+                    </label>
+                    <label
+                      class="cursor-pointer p-3 rounded-lg bg-surface-container hover:bg-surface-container-high flex flex-col gap-0.5 transition-all">
+                      <input aria-label="Select 11:00 - 02:00 PM slot" class="sr-only" name="time_slot" type="radio" />
+                      <div class="flex items-center justify-between">
+                        <span class="font-label-lg text-label-lg font-bold text-on-surface">11:00 - 02:00 PM</span>
+                        <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">Moderate wait</span>
+                    </label>
+                    <label
+                      class="cursor-pointer p-3 rounded-lg bg-surface-container hover:bg-surface-container-high flex flex-col gap-0.5 transition-all">
+                      <input aria-label="Select 02:00 - 05:00 PM slot" class="sr-only" name="time_slot" type="radio" />
+                      <div class="flex items-center justify-between">
+                        <span class="font-label-lg text-label-lg font-bold text-on-surface">02:00 - 05:00 PM</span>
+                        <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">Fast track bays open</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Vehicle / Tractor Registration -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                  <div class="flex flex-col gap-space-xxs">
+                    <label class="font-label-md text-label-md font-semibold text-on-surface" for="reg-number">Tractor /
+                      Vehicle Plate No.</label>
+                    <input
+                      class="w-full h-12 bg-surface-container-lowest text-on-surface font-code-sm text-code-sm uppercase px-space-md rounded-lg shadow-sm border border-outline-variant/60 focus:border-secondary focus:outline-none"
+                      id="reg-number" placeholder="e.g. PB-10-AZ-3341" type="text" value="PB-10-AZ-3341" />
+                  </div>
+                  <div class="flex flex-col gap-space-xxs">
+                    <label class="font-label-md text-label-md font-semibold text-on-surface" for="farmer-aadhaar">Kisan
+                      ID / Aadhaar Last 4</label>
+                    <div class="relative">
+                      <input
+                        class="w-full h-12 bg-surface-container text-on-surface font-code-sm text-code-sm px-space-md rounded-lg border border-outline-variant/40 focus:outline-none"
+                        id="farmer-aadhaar" placeholder="PB-88219 (Verified)" readonly type="text" value="PB-88219" />
+                      <span
+                        class="material-symbols-outlined absolute right-3 top-3 text-secondary text-[20px] verified-icon">check_circle</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Booking Submit CTA -->
+                <div class="flex flex-col sm:flex-row items-center gap-space-md pt-space-xs">
+                  <button
+                    class="w-full sm:w-auto flex-1 h-12 inline-flex items-center justify-center gap-space-xs bg-tertiary-fixed text-on-tertiary-fixed font-label-lg text-label-lg font-bold px-space-lg rounded-lg shadow-md hover:brightness-105 active:scale-95 transition-all"
+                    type="submit">
+                    <span class="material-symbols-outlined text-[20px]">confirmation_number</span>
+                    <span>Book Verified Slot (Generate e-Pass)</span>
+                  </button>
+                  <div class="flex items-center gap-space-xs text-secondary font-label-md text-label-md">
+                    <span class="material-symbols-outlined text-[18px]">lock</span>
+                    <span>Instant OTP Verification</span>
+                  </div>
+                </div>
+              </form>
+
+              <!-- Live "Estimated Slot Duration" Calculator Preview Box (5 Cols) -->
+              <div
+                class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-low p-space-lg rounded-xl border border-outline-variant/40">
+                <div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-secondary text-[22px]">analytics</span>
+                    <span class="font-headline-sm text-headline-sm font-bold text-on-surface">Slot Intelligence</span>
+                  </div>
+                  <span
+                    class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-code-sm text-code-sm font-bold">
+                    Mandi AI v2.4
+                  </span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Live automated forecast based on current queue density at PACS Khanna Yard.
+                </p>
+
+                <!-- Metrics Cards Grid inside Preview -->
+                <div class="grid grid-cols-2 gap-space-xs">
+                  <div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
+                    <span class="font-body-sm text-body-sm text-on-surface-variant block">Assigned Bay</span>
+                    <span class="font-headline-sm text-headline-sm font-extrabold text-secondary" id="assigned-bay">Bay
+                      #04</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Heavy Unloader</span>
+                  </div>
+                  <div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
+                    <span class="font-body-sm text-body-sm text-on-surface-variant block">Est. Weigh Time</span>
+                    <span class="font-headline-sm text-headline-sm font-extrabold text-primary" id="est-weigh-time">18
+                      Mins</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant block mt-0.5">Automated Tare</span>
+                  </div>
+                </div>
+
+                <!-- Yard Turnaround Bar -->
+                <div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex flex-col gap-space-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label-md text-label-md font-semibold text-on-surface">Total Yard Turnaround</span>
+                    <span class="font-label-lg text-label-lg font-bold text-secondary">~45 mins max</span>
+                  </div>
+                  <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden flex">
+                    <div class="bg-primary h-full segment-gate" title="Gate Check (10m)"></div>
+                    <div class="bg-secondary-container h-full segment-assay" title="Assay QC (8m)"></div>
+                    <div class="bg-tertiary-fixed h-full segment-unload" title="Unloading (15m)"></div>
+                    <div class="bg-secondary h-full segment-weigh" title="Gross-Tare Weigh (12m)"></div>
+                  </div>
+                  <div class="flex justify-between text-body-sm font-body-sm text-on-surface-variant">
+                    <span>Gate Entry</span>
+                    <span>Moisture QC</span>
+                    <span>Unload</span>
+                    <span>J-Form</span>
+                  </div>
+                </div>
+
+                <!-- Moisture window note -->
+                <div class="bg-surface-container-lowest p-space-sm rounded-lg shadow-sm flex items-start gap-space-xs">
+                  <span
+                    class="material-symbols-outlined text-tertiary text-[20px] flex-shrink-0 mt-0.5">water_drop</span>
+                  <div>
+                    <span class="font-label-md text-label-md font-bold text-on-surface block">Moisture Check
+                      Window</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Recommended arrival window: <strong
+                        class="text-on-surface">09:30 AM - 10:15 AM</strong> for fastest ambient grain
+                      acceptance.</span>
+                  </div>
+                </div>
+
+                <!-- Voucher Preview Card -->
+                <div
+                  class="bg-gradient-to-r from-secondary/10 to-primary/10 p-space-sm rounded-lg flex items-center justify-between border border-secondary/20">
+                  <div class="flex items-center gap-space-sm">
+                    <div
+                      class="w-12 h-12 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-surface shadow-sm">
+                      <span class="material-symbols-outlined text-[28px]">qr_code_2</span>
+                    </div>
+                    <div>
+                      <span class="font-label-md text-label-md font-bold text-on-surface block">Instant Mobile
+                        Voucher</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">SMS + WhatsApp with offline
+                        QR</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 4. LIVE QUEUE / TOKEN STATUS BOARD (AIRPORT/RAILWAY DEPARTURE)    -->
+      <!-- ================================================================= -->
+      <section class="w-full bg-[#071a0b] py-space-2xl text-surface-container-lowest" id="live-queue-board">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <!-- Board Header -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-xl">
+            <div class="flex items-center gap-space-sm">
+              <div class="w-3.5 h-3.5 rounded-full bg-error animate-ping"></div>
+              <div>
+                <span class="font-code-sm text-code-sm uppercase tracking-widest text-[#ffcc00] font-bold">Automated
+                  Mandi Yard Telemetry</span>
+                <h2
+                  class="font-headline-xl text-headline-xl text-surface-container-lowest font-extrabold tracking-tight">
+                  Live Token Status Board
+                </h2>
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-space-xs bg-[#0f2e13] px-space-md py-space-xs rounded-lg shadow-inner border border-white/10">
+              <span class="material-symbols-outlined text-[#ffcc00] text-[20px]">display_settings</span>
+              <span class="font-code-sm text-code-sm text-surface-container-lowest font-medium">Live Display: PACS
+                Khanna Main Yard - Terminal A</span>
+            </div>
+          </div>
+
+          <!-- Main Flight-Board Panel -->
+          <div class="bg-[#0b240f] rounded-2xl p-space-lg shadow-2xl overflow-hidden border border-white/10">
+            <!-- Now Serving Hero Box (Amber Glow Display) -->
+            <div
+              class="bg-[#051408] rounded-xl p-space-lg mb-space-lg flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg shadow-inner border border-[#ffc820]/30">
+              <div class="flex flex-col">
+                <span class="font-code-sm text-code-sm uppercase tracking-wider text-[#ffb957] font-semibold">NOW
+                  SERVING AT WEIGHBRIDGE</span>
+                <div class="flex items-baseline gap-space-sm mt-1">
+                  <span class="font-mono text-5xl md:text-6xl font-extrabold text-[#ffc820] tracking-wider board-glow">
+                    TK-408
+                  </span>
+                  <span
+                    class="px-2.5 py-1 rounded bg-[#ffc820]/20 text-[#ffc820] font-code-sm text-code-sm font-bold animate-pulse">
+                    GATE CALLING
+                  </span>
+                </div>
+              </div>
+
+              <!-- Token Details Strip -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md w-full lg:w-auto">
+                <div class="flex flex-col">
+                  <span class="font-code-sm text-code-sm text-surface-container-lowest/60">CROP CONSIGNMENT</span>
+                  <span class="font-code-sm text-code-sm font-bold text-surface-container-lowest">Wheat (Kanak)</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-code-sm text-code-sm text-surface-container-lowest/60">TRACTOR REG</span>
+                  <span class="font-code-sm text-code-sm font-bold text-[#a3f69c]">PB-10-AZ-3341</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-code-sm text-code-sm text-surface-container-lowest/60">ASSIGNED BAY</span>
+                  <span class="font-code-sm text-code-sm font-bold text-[#ffddb5]">Bay 02 (Primary)</span>
+                </div>
+                <div class="flex flex-col">
+                  <span class="font-code-sm text-code-sm text-surface-container-lowest/60">MOISTURE ASSAY</span>
+                  <span class="font-code-sm text-code-sm font-bold text-[#88d982]">11.8% PASSED</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Next in Queue Departure Table -->
+            <div class="overflow-x-auto">
+              <table class="w-full text-left font-code-sm text-code-sm">
+                <thead>
+                  <tr class="bg-[#051408] text-surface-container-lowest/70 font-semibold uppercase tracking-wider">
+                    <th class="py-3.5 px-4 rounded-l-lg">Token ID</th>
+                    <th class="py-3.5 px-4">Est. Gate Call</th>
+                    <th class="py-3.5 px-4">Vehicle / Trailer</th>
+                    <th class="py-3.5 px-4">Consignment</th>
+                    <th class="py-3.5 px-4">Wait Time</th>
+                    <th class="py-3.5 px-4 rounded-r-lg text-right">Current Stage</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5" id="live-queue-tbody">
+                  <tr class="hover:bg-white/5 transition-colors">
+                    <td class="py-4 px-4 font-mono font-bold text-[#ffcc00] text-title-md">TK-409</td>
+                    <td class="py-4 px-4 text-surface-container-lowest font-medium">10:45 AM (in 3m)</td>
+                    <td class="py-4 px-4 text-surface-container-lowest">PB-11-BK-9182 (Sonalika 750)</td>
+                    <td class="py-4 px-4 text-surface-container-lowest/80">Wheat (60 Qtl)</td>
+                    <td class="py-4 px-4 text-secondary-fixed-dim font-bold">~8 mins</td>
+                    <td class="py-4 px-4 text-right">
+                      <span
+                        class="inline-flex items-center px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold">
+                        WEIGHBRIDGE
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-white/5 transition-colors">
+                    <td class="py-4 px-4 font-mono font-bold text-[#ffcc00] text-title-md">TK-410</td>
+                    <td class="py-4 px-4 text-surface-container-lowest font-medium">10:52 AM</td>
+                    <td class="py-4 px-4 text-surface-container-lowest">HR-05-CX-1011 (Mahindra 575)</td>
+                    <td class="py-4 px-4 text-surface-container-lowest/80">Wheat (38 Qtl)</td>
+                    <td class="py-4 px-4 text-secondary-fixed-dim font-bold">~15 mins</td>
+                    <td class="py-4 px-4 text-right">
+                      <span
+                        class="inline-flex items-center px-2.5 py-1 rounded bg-tertiary-container text-on-tertiary-container font-label-md text-label-md font-semibold">
+                        QUALITY CHECK
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-white/5 transition-colors">
+                    <td class="py-4 px-4 font-mono font-bold text-[#ffcc00] text-title-md">TK-411</td>
+                    <td class="py-4 px-4 text-surface-container-lowest font-medium">11:04 AM</td>
+                    <td class="py-4 px-4 text-surface-container-lowest">PB-10-EE-4409 (John Deere 5310)</td>
+                    <td class="py-4 px-4 text-surface-container-lowest/80">Wheat (80 Qtl)</td>
+                    <td class="py-4 px-4 text-secondary-fixed-dim font-bold">~24 mins</td>
+                    <td class="py-4 px-4 text-right">
+                      <span
+                        class="inline-flex items-center px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md font-semibold">
+                        READY FOR UNLOAD
+                      </span>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-white/5 transition-colors">
+                    <td class="py-4 px-4 font-mono font-bold text-[#ffcc00] text-title-md">TK-412</td>
+                    <td class="py-4 px-4 text-surface-container-lowest font-medium">11:15 AM</td>
+                    <td class="py-4 px-4 text-surface-container-lowest">PB-08-AA-7744 (Farmtrac 60)</td>
+                    <td class="py-4 px-4 text-surface-container-lowest/80">Wheat (45 Qtl)</td>
+                    <td class="py-4 px-4 text-secondary-fixed-dim font-bold">~32 mins</td>
+                    <td class="py-4 px-4 text-right">
+                      <span
+                        class="inline-flex items-center px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold">
+                        APPROACHING GATE
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Footer note inside live board -->
+            <div
+              class="mt-space-md pt-space-md border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-body-sm font-body-sm text-surface-container-lowest/60 gap-space-xs">
+              <span>* Tokens are called strictly as per moisture meter verification timestamp.</span>
+              <span class="flex items-center gap-1 text-[#ffc820]">
+                <span class="material-symbols-outlined text-[16px]">wifi_tethering</span>
+                Yard CCTV Weighbridge Sensors Online
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 5. HORIZONTAL PROCUREMENT-TO-PAYMENT STATUS STEPPER               -->
+      <!-- ================================================================= -->
+      <section class="w-full bg-surface-container-lowest py-space-2xl shadow-sm" id="stepper-section">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <div class="text-center max-w-3xl mx-auto mb-space-xl">
+            <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Transparent
+              6-Stage Fulfillment</span>
+            <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold mt-1">
+              From Field Gate to Bank Account in 48 Hours
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-xxs">
+              Every checkpoint is recorded digitally with geo-tagged receipts and instant SMS dispatch to the registered
+              farmer.
+            </p>
+          </div>
+
+          <!-- Stepper Container -->
+          <div class="relative w-full">
+            <!-- Track line for desktop -->
+            <div class="hidden lg:block absolute top-7 left-12 right-12 h-1 bg-surface-container-highest z-0">
+              <div class="h-1 bg-secondary rounded-full progress-fill-82"></div>
+            </div>
+
+            <!-- 6 Step Items -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-space-md relative z-10">
+              <!-- Step 1 -->
+              <div class="flex flex-col items-center text-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md mb-space-xs">
+                  <span class="material-symbols-outlined text-[26px]">confirmation_number</span>
+                </div>
+                <span class="font-label-md text-label-md font-bold text-secondary">Step 1</span>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface mt-0.5">Slot Booked</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">e-Pass & Token generated with QR</p>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="flex flex-col items-center text-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md mb-space-xs">
+                  <span class="material-symbols-outlined text-[26px]">fingerprint</span>
+                </div>
+                <span class="font-label-md text-label-md font-bold text-secondary">Step 2</span>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface mt-0.5">Gate Biometric</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Farmer verification & license check
+                </p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="flex flex-col items-center text-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md mb-space-xs">
+                  <span class="material-symbols-outlined text-[26px]">biotech</span>
+                </div>
+                <span class="font-label-md text-label-md font-bold text-secondary">Step 3</span>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface mt-0.5">Assay QC</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Digital moisture & foreign matter
+                  assay</p>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="flex flex-col items-center text-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md mb-space-xs">
+                  <span class="material-symbols-outlined text-[26px]">monitor_weight</span>
+                </div>
+                <span class="font-label-md text-label-md font-bold text-secondary">Step 4</span>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface mt-0.5">Weighbridge</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Automated Gross & Tare unloader scale
+                </p>
+              </div>
+
+              <!-- Step 5 (Current active) -->
+              <div class="flex flex-col items-center text-center">
+                <div
+                  class="w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg ring-4 ring-primary-fixed mb-space-xs animate-bounce">
+                  <span class="material-symbols-outlined text-[26px]">receipt_long</span>
+                </div>
+                <span class="font-label-md text-label-md font-bold text-primary">Step 5</span>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface mt-0.5">J-Form Issued</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Signed digital weighing slip created
+                </p>
+              </div>
+
+              <!-- Step 6 -->
+              <div class="flex flex-col items-center text-center opacity-70">
+                <div
+                  class="w-14 h-14 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center shadow-sm mb-space-xs">
+                  <span class="material-symbols-outlined text-[26px]">account_balance</span>
+                </div>
+                <span class="font-label-md text-label-md font-bold text-on-surface-variant">Step 6</span>
+                <h3 class="font-label-lg text-label-lg font-bold text-on-surface mt-0.5">DBT Bank Payout</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">PFMS credit directly to
+                  Jan-Dhan/Aadhaar</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Farmer Preview Notification Pill -->
+          <div
+            class="mt-space-xl p-space-md rounded-xl bg-secondary-container/40 flex flex-col sm:flex-row items-center justify-between gap-space-sm border border-secondary/20">
+            <div class="flex items-center gap-space-sm">
+              <span class="material-symbols-outlined text-secondary text-[24px]">task_alt</span>
+              <p class="font-body-md text-body-md text-on-surface">
+                <strong>Current Farmer Status:</strong> Step 5 completed at 11:20 AM. DBT payment of <strong
+                  class="text-secondary">₹1,09,125</strong> initiated via PFMS.
+              </p>
+            </div>
+            <button
+              class="px-space-md py-1.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-bold hover:brightness-105 transition-all shadow-sm"
+              onclick="openModal('jform-modal')" type="button">
+              View Live Receipt
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 6. SMS-STYLE NOTIFICATION FEED PANEL (CHAT BUBBLE UI)             -->
+      <!-- ================================================================= -->
+      <section class="w-full bg-surface py-space-2xl" id="sms-section">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+            <!-- Left Explanatory Column (5 cols) -->
+            <div class="lg:col-span-5 flex flex-col items-start">
+              <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Zero
+                Smartphone Dependency</span>
+              <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold mt-1">
+                Real-Time Transparent SMS & WhatsApp Alerts
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm leading-relaxed">
+                Every mandi checkpoint updates the farmer instantly in Punjabi, Hindi, or English. From gate entry to
+                DBT credit, complete fiscal certainty without visiting a bank branch.
+              </p>
+
+              <div class="mt-space-lg flex flex-col gap-space-sm w-full">
+                <div class="flex items-center gap-space-xs text-on-surface font-label-md text-label-md">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                  <span>Direct Bank Account Validation (NPCI / PFMS)</span>
+                </div>
+                <div class="flex items-center gap-space-xs text-on-surface font-label-md text-label-md">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                  <span>Zero Mandi Agent (Arhtiya) Fee Deductions</span>
+                </div>
+                <div class="flex items-center gap-space-xs text-on-surface font-label-md text-label-md">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+                  <span>Tamper-proof Digital J-Form Delivery</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Realistic Mobile / SMS UI Mockup (7 cols) -->
+            <div class="lg:col-span-7 flex justify-center">
+              <div
+                class="w-full max-w-md bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden border border-outline-variant/60">
+                <!-- Phone Header Bar -->
+                <div
+                  class="bg-[#1b5e20] text-surface-container-lowest px-space-md py-space-sm flex items-center justify-between">
+                  <div class="flex items-center gap-space-xs">
+                    <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+                    <div
+                      class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-label-md">
+                      KS
+                    </div>
+                    <div>
+                      <h4 class="font-label-lg text-label-lg font-bold leading-tight">VK-KISANSLOT</h4>
+                      <span class="font-body-sm text-body-sm opacity-80 leading-none">Official Government Gateway</span>
+                    </div>
+                  </div>
+                  <span class="material-symbols-outlined text-[20px]">more_vert</span>
+                </div>
+
+                <!-- Chat Message Feed Area -->
+                <div
+                  class="p-space-md bg-surface-container-low flex flex-col gap-space-md max-h-[460px] overflow-y-auto">
+                  <!-- Date Divider -->
+                  <div class="text-center">
+                    <span
+                      class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant font-body-sm text-body-sm font-medium">
+                      Today, 28 March 2025
+                    </span>
+                  </div>
+
+                  <!-- SMS Bubble 1: Slot Confirmed -->
+                  <div class="flex flex-col items-start max-w-[90%]">
+                    <div
+                      class="bg-surface-container-lowest p-space-sm rounded-xl rounded-tl-none shadow-sm text-on-surface font-body-md text-body-md border border-outline-variant/30">
+                      <p class="font-semibold text-secondary">KisanSlot: Token Confirmed</p>
+                      <p class="mt-1">
+                        Sh. Rameshwar Singh, slot confirmed for <strong>45 Qtl Wheat</strong> on 28-Mar at Khanna Mandi
+                        (Gate 2, 09:00 AM).
+                      </p>
+                      <div
+                        class="mt-2 p-1.5 rounded bg-surface-container text-on-surface font-code-sm text-code-sm font-bold flex justify-between items-center">
+                        <span>Token: TK-408</span>
+                        <span class="text-secondary">Bay #04</span>
+                      </div>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block text-right mt-1">08:12
+                        AM</span>
+                    </div>
+                  </div>
+
+                  <!-- SMS Bubble 2: Gate Entry -->
+                  <div class="flex flex-col items-start max-w-[90%]">
+                    <div
+                      class="bg-surface-container-lowest p-space-sm rounded-xl rounded-tl-none shadow-sm text-on-surface font-body-md text-body-md border border-outline-variant/30">
+                      <p class="font-semibold text-primary">KisanSlot: Gate Entry Verified</p>
+                      <p class="mt-1">
+                        Gate Entry recorded for PB-10-AZ-3341. Proceed directly to <strong>Weighbridge 02</strong>.
+                        Moisture verified: 11.8% (Approved). No agent fee required.
+                      </p>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block text-right mt-1">09:14
+                        AM</span>
+                    </div>
+                  </div>
+
+                  <!-- SMS Bubble 3: J-Form & Payment -->
+                  <div class="flex flex-col items-start max-w-[90%]">
+                    <div
+                      class="bg-surface-container-lowest p-space-sm rounded-xl rounded-tl-none shadow-sm text-on-surface font-body-md text-body-md border border-outline-variant/30">
+                      <p class="font-semibold text-secondary">KisanSlot: J-Form & Payout</p>
+                      <p class="mt-1">
+                        J-Form generated for <strong>45.20 Qtl @ ₹2,425/Qtl = ₹1,09,610</strong>. Transferred to A/C
+                        ending 4912 via PFMS ref: <span class="font-mono">GOI-DBT-882194</span>.
+                      </p>
+                      <button
+                        class="mt-2 inline-flex items-center gap-1 text-secondary font-label-md text-label-md font-bold hover:underline"
+                        onclick="openModal('jform-modal')" type="button">
+                        <span class="material-symbols-outlined text-[16px]">download</span>
+                        <span>Download e-J-Form PDF</span>
+                      </button>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant block text-right mt-1">11:20
+                        AM</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fake SMS Input Field -->
+                <div
+                  class="p-space-sm bg-surface-container-lowest flex items-center gap-space-xs text-on-surface-variant border-t border-outline-variant/30">
+                  <span class="material-symbols-outlined text-[20px]">lock</span>
+                  <span class="font-body-sm text-body-sm italic flex-1">This is an automated government broadcast
+                    channel</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 7. MULTI-CHANNEL ACCESS ROW                                       -->
+      <!-- ================================================================= -->
+      <section class="w-full bg-surface-container-lowest py-space-2xl shadow-sm" id="channels-section">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <div class="text-center max-w-2xl mx-auto mb-space-xl">
+            <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Inclusive Rural
+              Access</span>
+            <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold mt-1">
+              5 Seamless Ways to Book Your Mandi Slot
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-space-xxs">
+              Equipped for every farmer: whether you prefer high-speed smartphone apps, simple keypad phones, or village
+              assistance centers.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+            <!-- Channel 1: Mobile App -->
+            <div
+              class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center text-center border border-outline-variant/30">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-space-xs">
+                <span class="material-symbols-outlined text-[24px]">smartphone</span>
+              </div>
+              <h3 class="font-label-lg text-label-lg font-bold text-on-surface">Mobile App</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Android & iOS with offline sync and digital gate pass QR storage.
+              </p>
+              <a href="#" class="mt-space-sm text-secondary font-label-md text-label-md font-semibold hover:underline"
+                onclick="showToast('📱 KisanSlot Mobile APK download link sent via SMS')">Install APK / App</a>
+            </div>
+
+            <!-- Channel 2: Web Portal -->
+            <div
+              class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center text-center border border-outline-variant/30">
+              <div
+                class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-space-xs">
+                <span class="material-symbols-outlined text-[24px]">language</span>
+              </div>
+              <h3 class="font-label-lg text-label-lg font-bold text-on-surface">Web Portal</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Official portal at <strong>KisanSlot.gov.in</strong> with live yard capacity charts.
+              </p>
+              <a href="#booking-form-section"
+                class="mt-space-sm text-primary font-label-md text-label-md font-semibold hover:underline">Web
+                Dashboard</a>
+            </div>
+
+            <!-- Channel 3: Toll-Free IVR -->
+            <div
+              class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center text-center border border-outline-variant/30">
+              <div
+                class="w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mb-space-xs">
+                <span class="material-symbols-outlined text-[24px]">phone_in_talk</span>
+              </div>
+              <h3 class="font-label-lg text-label-lg font-bold text-on-surface">Toll-Free IVR</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Voice booking in 12 regional languages: <strong>1800-180-1551</strong>.
+              </p>
+              <a href="tel:18001801551"
+                class="mt-space-sm text-tertiary font-label-md text-label-md font-semibold hover:underline">Call
+                Toll-Free</a>
+            </div>
+
+            <!-- Channel 4: SMS Gateway -->
+            <div
+              class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center text-center border border-outline-variant/30">
+              <div
+                class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-space-xs">
+                <span class="material-symbols-outlined text-[24px]">sms</span>
+              </div>
+              <h3 class="font-label-lg text-label-lg font-bold text-on-surface">SMS Gateway</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Send simple text <code
+                  class="font-mono font-bold bg-surface-container px-1 py-0.5 rounded">SLOT [ID]</code> to
+                <strong>7738299899</strong>.
+              </p>
+              <a href="#" class="mt-space-sm text-secondary font-label-md text-label-md font-semibold hover:underline"
+                onclick="showToast('💬 SMS Format: Send SLOT [KISAN_ID] [QTY] to 7738299899')">SMS Guide</a>
+            </div>
+
+            <!-- Channel 5: CSC / Village VLE Kiosk -->
+            <div
+              class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center text-center border border-outline-variant/30">
+              <div
+                class="w-12 h-12 rounded-full bg-surface-container text-on-surface flex items-center justify-center mb-space-xs">
+                <span class="material-symbols-outlined text-[24px]">store</span>
+              </div>
+              <h3 class="font-label-lg text-label-lg font-bold text-on-surface">CSC & VLE Kiosk</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Assisted registration at 5,00,000+ Common Service Centres across India.
+              </p>
+              <a href="#" class="mt-space-sm text-on-surface font-label-md text-label-md font-semibold hover:underline"
+                onclick="showToast('📍 Locating 3 CSC Kendras near your registered village...')">Find Nearest CSC</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 8. THREE ROLE-BASED DASHBOARD PREVIEWS                           -->
+      <!-- ================================================================= -->
+      <section class="w-full bg-surface py-space-2xl">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-md">
+            <div>
+              <span class="font-label-md text-label-md text-secondary font-bold uppercase tracking-wider">Ecosystem
+                Architecture</span>
+              <h2 class="font-headline-xl text-headline-xl text-on-surface font-bold mt-1">
+                Tailored Consoles for Every Stakeholder
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-xxs">
+                Engineered for seamless interoperability between farmers, mandi gate operators, and state nodal
+                authorities.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+            <!-- Role 1: Farmer Portal -->
+            <div
+              class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between hover:shadow-xl transition-shadow border border-outline-variant/30">
+              <div>
+                <div class="flex items-center justify-between mb-space-md">
+                  <span
+                    class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md font-bold">
+                    Farmer Interface
+                  </span>
+                  <span class="material-symbols-outlined text-secondary text-[24px]">agriculture</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Kisan Self-Service Portal</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  One-click access to active gate tokens, crop weighbridge history, and government DBT receipts.
+                </p>
+
+                <div class="mt-space-md p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">Active Consignment</span>
+                    <span class="font-bold text-secondary">PB-88219 (Wheat)</span>
+                  </div>
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">Digital Gate Pass</span>
+                    <span class="font-bold text-on-surface font-mono">TK-408 [QR Ready]</span>
+                  </div>
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">Latest J-Form Credit</span>
+                    <span class="font-bold text-primary">₹1,09,610 (Direct DBT)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-space-lg pt-space-md border-t border-surface-container-highest flex items-center justify-between">
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Multilingual • Offline Mode</span>
+                <a class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md font-bold hover:underline"
+                  href="#booking-form-section">
+                  <span>Open Console</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Role 2: Mandi Operator -->
+            <div
+              class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between hover:shadow-xl transition-shadow border border-outline-variant/30">
+              <div>
+                <div class="flex items-center justify-between mb-space-md">
+                  <span
+                    class="px-2.5 py-1 rounded bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-bold">
+                    Mandi Command
+                  </span>
+                  <span class="material-symbols-outlined text-primary text-[24px]">point_of_sale</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Weighbridge & Yard Console</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Synchronized electronic scale feeds, optical sensor token callers, and moisture meter verification.
+                </p>
+
+                <div class="mt-space-md p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">Active Weighbridge Bays</span>
+                    <span class="font-bold text-primary">4 / 4 Online</span>
+                  </div>
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">Avg Tare Cycle</span>
+                    <span class="font-bold text-on-surface">178 seconds</span>
+                  </div>
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">Assay Lab Throughput</span>
+                    <span class="font-bold text-secondary">98.4% Compliance</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-space-lg pt-space-md border-t border-surface-container-highest flex items-center justify-between">
+                <span class="font-body-sm text-body-sm text-on-surface-variant">Automated Calibration</span>
+                <a class="inline-flex items-center gap-1 text-primary font-label-md text-label-md font-bold hover:underline"
+                  href="#live-queue-board">
+                  <span>Mandi Operator View</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Role 3: State Nodal Officer -->
+            <div
+              class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col justify-between hover:shadow-xl transition-shadow border border-outline-variant/30">
+              <div>
+                <div class="flex items-center justify-between mb-space-md">
+                  <span
+                    class="px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-bold">
+                    Apex Monitoring
+                  </span>
+                  <span class="material-symbols-outlined text-tertiary text-[24px]">query_stats</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">State Nodal Officer Dashboard
+                </h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Real-time district-level procurement heatmaps, target vs actuals, and AI anti-hoarding alerts.
+                </p>
+
+                <div class="mt-space-md p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">State Target Achieved</span>
+                    <span class="font-bold text-tertiary">64.2% (13.8 MMT)</span>
+                  </div>
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">Active APMC Mandis</span>
+                    <span class="font-bold text-on-surface">4,820 Nodes</span>
+                  </div>
+                  <div class="flex items-center justify-between text-body-sm font-body-sm">
+                    <span class="text-on-surface-variant">Anomalies Detected</span>
+                    <span class="font-bold text-secondary">0 Critical Flags</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-space-lg pt-space-md border-t border-surface-container-highest flex items-center justify-between">
+                <span class="font-body-sm text-body-sm text-on-surface-variant">AgriStack Integration</span>
+                <a class="inline-flex items-center gap-1 text-tertiary font-label-md text-label-md font-bold hover:underline"
+                  href="#" onclick="showToast('🏛️ Opening State Nodal Command Console...')">
+                  <span>Nodal Command View</span>
+                  <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- 9. OFFICIAL GOVERNMENT-STYLE FOOTER (SECTION 1: DARK BRANDED)     -->
+      <!-- ================================================================= -->
+      <footer class="w-full bg-[#0a1f0d] text-surface-container-lowest py-space-2xl">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <!-- Top Ministry Credit & Badges -->
+          <div
+            class="flex flex-col md:flex-row items-start md:items-center justify-between pb-space-xl gap-space-md border-b border-white/10">
+            <div class="flex flex-col">
+              <span class="font-headline-sm text-headline-sm font-bold text-surface-container-lowest leading-tight">
+                KisanSlot National Procurement Network
+              </span>
+              <p class="font-body-md text-body-md text-surface-container-lowest/80 mt-1">
+                Department of Agriculture & Farmers Welfare, Ministry of Agriculture, Government of India
+              </p>
+            </div>
+            <div class="flex items-center gap-space-md bg-white/5 p-space-sm rounded-xl border border-white/10">
+              <div class="flex flex-col text-right">
+                <span class="font-label-md text-label-md text-tertiary-fixed font-bold">24x7 Kisan Call Centre</span>
+                <span
+                  class="font-headline-sm text-headline-sm font-mono font-extrabold text-surface-container-lowest">1800-180-1551</span>
+              </div>
+              <span class="material-symbols-outlined text-[32px] text-secondary-fixed">support_agent</span>
+            </div>
+          </div>
+
+          <!-- Scheme Partners Badges -->
+          <div class="py-space-md border-b border-white/10 flex flex-wrap items-center justify-between gap-space-md">
+            <div
+              class="flex flex-wrap items-center gap-space-lg text-body-sm font-body-sm text-surface-container-lowest/70">
+              <span class="font-bold text-surface-container-lowest">Supported Programs:</span>
+              <span class="px-2 py-1 rounded bg-white/5">Digital India</span>
+              <span class="px-2 py-1 rounded bg-white/5">PM-AASHA</span>
+              <span class="px-2 py-1 rounded bg-white/5">e-NAM</span>
+              <span class="px-2 py-1 rounded bg-white/5">Food Corporation of India (FCI)</span>
+              <span class="px-2 py-1 rounded bg-white/5">National Informatics Centre (NIC)</span>
+            </div>
+            <div class="flex items-center gap-space-xs text-secondary-fixed-dim font-code-sm text-code-sm">
+              <span class="material-symbols-outlined text-[16px]">verified_user</span>
+              <span>AgriStack Compliant v3.4.2</span>
+            </div>
+          </div>
+
+          <!-- Links Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-lg py-space-xl text-body-sm font-body-sm">
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-md text-label-md font-bold text-surface-container-lowest">Farmer Services</span>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#booking-form-section">Book Yard Slot</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#live-queue-board">Live Token Status</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#"
+                onclick="openModal('jform-modal')">Download Digital J-Form</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#stepper-section">DBT Payment Ledger</a>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-md text-label-md font-bold text-surface-container-lowest">Procurement
+                Policy</span>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">MSP Rates 2024-25</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Moisture Quality Standards</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">FAQ on FAQ Specifications</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Grievance Redressal Portal</a>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-md text-label-md font-bold text-surface-container-lowest">Mandi Operators</span>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Weighbridge API Integration</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Operator Login</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Mandi Yard Directory</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Offline Token Sync Tool</a>
+            </div>
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-md text-label-md font-bold text-surface-container-lowest">Accessibility &
+                Help</span>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#" onclick="announceScreenReader()">Screen
+                Reader Access</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Accessibility Statement</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Privacy Policy</a>
+              <a class="hover:text-tertiary-fixed transition-colors" href="#">Terms of Service</a>
+            </div>
+          </div>
+
+          <!-- Bottom Bar -->
+          <div
+            class="pt-space-md border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-space-sm text-body-sm font-body-sm text-surface-container-lowest/60">
+            <p>© 2025 Ministry of Agriculture & Farmers Welfare, Government of India. Designed for high accessibility
+              under GIGW 3.0.</p>
+            <div class="flex items-center gap-space-md">
+              <span>NIC Mandi Engine v2.4</span>
+              <span>•</span>
+              <span>Security Audited (CERT-In)</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- ================================================================= -->
+      <!-- 10. SECONDARY CLEAN FOOTER (MATCHING DESIGN BOTTOM SCREENSHOT)    -->
+      <!-- ================================================================= -->
+      <footer class="w-full bg-surface-container-low py-space-2xl border-t border-outline-variant/30">
+        <div class="max-w-7xl mx-auto px-gutter-desktop">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-space-xl">
+            <div class="flex flex-col gap-space-xs">
+              <div class="flex items-center gap-space-xs">
+                <img alt="KisanSlot Logo" class="h-6 w-auto object-contain rounded" src="assets/logo.png" />
+                <span class="font-headline-sm text-headline-sm text-secondary font-bold">KisanSlot</span>
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">
+                National Minimum Support Price (MSP) Agricultural Procurement Booking & Token Management System.
+              </p>
+              <span class="font-label-md text-label-md text-on-surface font-semibold mt-space-xs">Helpline:
+                1800-180-1551 (Toll Free)</span>
+            </div>
+
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-lg text-label-lg text-on-surface font-bold">Procurement Portals</span>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                href="#booking-form-section">Book Mandi Slot</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                href="#live-queue-board">Mandi Yard Queue</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                href="#stepper-section">Weight & Quality Receipt</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                href="#sms-section">Direct Benefit DBT Status</a>
+            </div>
+
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-lg text-label-lg text-on-surface font-bold">Important Guidelines</span>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                href="#">MSP FAQ & Rates (2024-25)</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                href="#">Crop Quality Specifications</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                href="#">Grievance Redressal</a>
+              <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors"
+                href="#">Mandi Yard Directory</a>
+            </div>
+
+            <div class="flex flex-col gap-space-xs">
+              <span class="font-label-lg text-label-lg text-on-surface font-bold">Accessibility & Standards</span>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Designed and developed to comply with Guidelines for Indian Government Websites (GIGW 3.0).
+              </p>
+              <span class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs">NIC Mandi Grid Engine
+                v2.4</span>
+            </div>
+          </div>
+
+          <div
+            class="mt-space-2xl pt-space-lg border-t border-surface-container-highest flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+            <p>© 2025 Ministry of Agriculture & Farmers Welfare, Government of India. All rights reserved.</p>
+            <div class="flex items-center gap-space-lg">
+              <a class="hover:text-on-surface transition-colors" href="#">Website Policies</a>
+              <a class="hover:text-on-surface transition-colors" href="#">Terms of Use</a>
+              <a class="hover:text-on-surface transition-colors" href="#">Security Guidelines</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: DIGITAL E-GATE PASS (PRINTABLE VOUCHER)                   -->
+  <!-- ================================================================= -->
+  <div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 modal-overlay"
+    id="epass-modal">
+    <div class="bg-surface-container-lowest rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden printable-card">
+      <!-- Pass Header -->
+      <div class="bg-secondary text-on-secondary p-5 flex items-start justify-between">
+        <div class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="KisanSlot" class="h-10 w-10 object-contain bg-white rounded-lg p-1" />
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-secondary-fixed">Government of India</span>
+            <h3 class="text-xl font-bold leading-tight">Mandi Unloading e-Pass</h3>
+          </div>
+        </div>
+        <button type="button" onclick="closeModal('epass-modal')" class="text-white/80 hover:text-white no-print">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+
+      <!-- Pass Body -->
+      <div class="p-6 flex flex-col gap-4">
+        <!-- Token Hero Card -->
+        <div
+          class="bg-surface-container-low rounded-xl p-4 flex items-center justify-between border border-secondary/20">
+          <div>
+            <span class="text-xs font-semibold text-on-surface-variant block uppercase">Allocated Token ID</span>
+            <span class="text-3xl font-extrabold text-secondary font-mono" id="modal-token-id">TK-414</span>
+          </div>
+          <div class="text-right">
+            <span class="text-xs font-semibold text-on-surface-variant block uppercase">Assigned Bay</span>
+            <span class="text-xl font-bold text-primary font-mono" id="modal-bay">Bay #04</span>
+          </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="grid grid-cols-2 gap-3 text-sm">
+          <div>
+            <span class="text-xs text-on-surface-variant block">Farmer Name</span>
+            <strong class="text-on-surface" id="modal-farmer-name">Rameshwar Singh</strong>
+          </div>
+          <div>
+            <span class="text-xs text-on-surface-variant block">Kisan ID</span>
+            <strong class="text-on-surface font-mono" id="modal-farmer-id">PB-88219</strong>
+          </div>
+          <div>
+            <span class="text-xs text-on-surface-variant block">Crop & Weight</span>
+            <strong class="text-secondary" id="modal-crop">Wheat (Kanak)</strong> - <span id="modal-qty">45 Qtl</span>
+          </div>
+          <div>
+            <span class="text-xs text-on-surface-variant block">Vehicle Reg</span>
+            <strong class="text-on-surface font-mono" id="modal-vehicle">PB-10-AZ-3341</strong>
+          </div>
+          <div class="col-span-2">
+            <span class="text-xs text-on-surface-variant block">Procurement Center</span>
+            <strong class="text-on-surface" id="modal-center">PACS Khanna Central Yard 02</strong>
+          </div>
+          <div>
+            <span class="text-xs text-on-surface-variant block">Scheduled Time Slot</span>
+            <strong class="text-primary" id="modal-slot">Today, 08:00 - 11:00 AM</strong>
+          </div>
+          <div>
+            <span class="text-xs text-on-surface-variant block">Issued Date</span>
+            <strong class="text-on-surface" id="modal-date">28 Mar 2025</strong>
+          </div>
+        </div>
+
+        <!-- Mock QR & Barcode Section -->
+        <div class="bg-surface-container rounded-xl p-4 flex items-center justify-between gap-4 mt-2">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-16 h-16 bg-white p-1 rounded-lg border border-outline-variant flex items-center justify-center">
+              <span class="material-symbols-outlined text-4xl text-neutral-800">qr_code_2</span>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-on-surface block">Scan at Gate Scanner</span>
+              <span class="text-[11px] text-on-surface-variant">Validated via NIC AgriStack</span>
+            </div>
+          </div>
+          <div class="barcode-box rounded border border-outline-variant">
+            <span class="barcode-bar-1"></span>
+            <span class="barcode-bar-2"></span>
+            <span class="barcode-bar-3"></span>
+            <span class="barcode-bar-4"></span>
+            <span class="barcode-bar-5"></span>
+            <span class="barcode-bar-6"></span>
+            <span class="barcode-bar-7"></span>
+            <span class="barcode-bar-8"></span>
+            <span class="barcode-bar-9"></span>
+            <span class="barcode-bar-10"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pass Actions -->
+      <div
+        class="p-4 bg-surface-container-low flex items-center justify-between gap-3 border-t border-outline-variant/30 no-print">
+        <span class="text-xs text-secondary font-semibold flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">sms</span>
+          SMS sent to farmer
+        </span>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="closeModal('epass-modal')"
+            class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-semibold text-sm hover:bg-surface-container-high transition-colors">
+            Close
+          </button>
+          <button type="button" onclick="window.print()"
+            class="px-4 py-2 rounded-lg bg-secondary text-on-secondary font-bold text-sm hover:brightness-105 transition-all flex items-center gap-1 shadow-sm">
+            <span class="material-symbols-outlined text-[18px]">print</span>
+            <span>Print e-Pass</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: DIGITAL E-J-FORM RECEIPT (OFFICIAL WEIGHING SLIP)         -->
+  <!-- ================================================================= -->
+  <div class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 modal-overlay"
+    id="jform-modal">
+    <div class="bg-surface-container-lowest rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden printable-card">
+      <!-- J-Form Header -->
+      <div class="bg-primary text-on-primary p-5 flex items-start justify-between">
+        <div class="flex items-center gap-3">
+          <img src="assets/logo.png" alt="KisanSlot" class="h-10 w-10 object-contain bg-white rounded-lg p-1" />
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-primary-fixed">Form 'J' Rule 24(1)</span>
+            <h3 class="text-xl font-bold leading-tight">Digital Sale & Weighing Voucher</h3>
+          </div>
+        </div>
+        <button type="button" onclick="closeModal('jform-modal')" class="text-white/80 hover:text-white no-print">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+
+      <!-- J-Form Body -->
+      <div class="p-6 flex flex-col gap-4 text-sm">
+        <div class="flex justify-between items-center pb-3 border-b border-surface-container-highest">
+          <div>
+            <span class="text-xs text-on-surface-variant block">J-Form Reference</span>
+            <span class="font-mono font-bold text-base text-on-surface">J-PB-2025-882194</span>
+          </div>
+          <div class="text-right">
+            <span class="text-xs text-on-surface-variant block">Weigh Date & Time</span>
+            <span class="font-mono text-sm text-on-surface">28-Mar-2025, 11:20 AM</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-container-low p-3 rounded-lg flex flex-col gap-2">
+          <div class="flex justify-between">
+            <span class="text-on-surface-variant">Farmer:</span>
+            <strong class="text-on-surface">Rameshwar Singh (PB-88219)</strong>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-on-surface-variant">Procurement Agency:</span>
+            <strong class="text-on-surface">FCI / PUNSUP Mandi Khanna</strong>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-on-surface-variant">Weighbridge Scale:</span>
+            <strong class="text-on-surface">WB-02 (Electronic Calibrated)</strong>
+          </div>
+        </div>
+
+        <!-- Weighing Calculations Table -->
+        <table class="w-full text-left font-body-sm border border-outline-variant/50 rounded-lg overflow-hidden">
+          <thead class="bg-surface-container font-semibold">
+            <tr>
+              <th class="p-2">Description</th>
+              <th class="p-2 text-right">Net Weight</th>
+              <th class="p-2 text-right">MSP Rate</th>
+              <th class="p-2 text-right">Total (₹)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-surface-container-highest">
+            <tr>
+              <td class="p-2">Wheat (FAQ Grade) - Moisture 11.8%</td>
+              <td class="p-2 text-right font-mono font-semibold">45.20 Qtl</td>
+              <td class="p-2 text-right font-mono">₹2,425.00</td>
+              <td class="p-2 text-right font-mono font-bold text-secondary">₹1,09,610.00</td>
+            </tr>
+            <tr class="bg-surface-container-low">
+              <td colspan="3" class="p-2 text-right font-bold text-on-surface">Total Payable via PFMS DBT:</td>
+              <td class="p-2 text-right font-mono font-extrabold text-base text-secondary">₹1,09,610.00</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- DBT Reference -->
+        <div class="bg-secondary-container/40 p-3 rounded-lg border border-secondary/30 flex items-start gap-2">
+          <span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0 mt-0.5">verified</span>
+          <div>
+            <strong class="text-secondary text-xs block">PFMS DBT Disbursal Authorization</strong>
+            <p class="text-xs text-on-surface">Directly credited to Aadhaar Seeded Bank Account ending ****4912. No
+              intermediary commissions deducted.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- J-Form Actions -->
+      <div
+        class="p-4 bg-surface-container-low flex items-center justify-between gap-3 border-t border-outline-variant/30 no-print">
+        <button type="button" onclick="closeModal('jform-modal')"
+          class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-semibold text-sm hover:bg-surface-container-high transition-colors">
+          Close
+        </button>
+        <button type="button" onclick="window.print()"
+          class="px-4 py-2 rounded-lg bg-primary text-on-primary font-bold text-sm hover:brightness-105 transition-all flex items-center gap-1 shadow-sm">
+          <span class="material-symbols-outlined text-[18px]">print</span>
+          <span>Print / Save PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
